@@ -1,0 +1,10 @@
+C:\Users\asmith\source\repos\MatcherPrototype\MatcherPrototype\bin\Debug\MatcherPrototype.exe.config
+C:\Users\asmith\source\repos\MatcherPrototype\MatcherPrototype\bin\Debug\MatcherPrototype.exe
+C:\Users\asmith\source\repos\MatcherPrototype\MatcherPrototype\bin\Debug\MatcherPrototype.pdb
+C:\Users\asmith\source\repos\MatcherPrototype\MatcherPrototype\obj\Debug\MatcherPrototype.csprojAssemblyReference.cache
+C:\Users\asmith\source\repos\MatcherPrototype\MatcherPrototype\obj\Debug\MatcherPrototype.Form1.resources
+C:\Users\asmith\source\repos\MatcherPrototype\MatcherPrototype\obj\Debug\MatcherPrototype.Properties.Resources.resources
+C:\Users\asmith\source\repos\MatcherPrototype\MatcherPrototype\obj\Debug\MatcherPrototype.csproj.GenerateResource.cache
+C:\Users\asmith\source\repos\MatcherPrototype\MatcherPrototype\obj\Debug\MatcherPrototype.csproj.CoreCompileInputs.cache
+C:\Users\asmith\source\repos\MatcherPrototype\MatcherPrototype\obj\Debug\MatcherPrototype.exe
+C:\Users\asmith\source\repos\MatcherPrototype\MatcherPrototype\obj\Debug\MatcherPrototype.pdb
