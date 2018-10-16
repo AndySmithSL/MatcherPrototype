@@ -12,5 +12,10 @@
         /// </summary>
         string Name { get; set; }
 
+        /// <summary>
+        /// Account number generator
+        /// </summary>
+        IAccountNumberGenerator Generator { get; set; }
+
     }
 }

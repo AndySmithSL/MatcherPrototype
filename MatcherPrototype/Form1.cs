@@ -1,13 +1,16 @@
-﻿using System;
+﻿using MatcherPrototype.Classes;
+using MatcherPrototype.Enumerators;
+using MatcherPrototype.Interfaces;
+using System;
 using System.Windows.Forms;
 
 namespace MatcherPrototype
 {
     public partial class Form1 : Form
     {
-        private Matcher matcher = null;
+        private IMatcher matcher = null;
 
-        public Matcher Matcher
+        public IMatcher Matcher
         {
             get => matcher ?? (matcher = new Matcher());
             set => matcher = value;
@@ -34,7 +37,7 @@ namespace MatcherPrototype
 
         private void buttonPlaceOrder_Click(object sender, EventArgs e)
         {
-            Matcher.PlaceOrder(int.Parse(textBoxAccountNumber.Text), decimal.Parse(textBoxPrice.Text), int.Parse(textBoxAmount.Text), radioButtonBuy.Checked);
+            Matcher.PlaceOrder(textBoxAccountNumber.Text, int.Parse(textBoxAmount.Text), decimal.Parse(textBoxPrice.Text), radioButtonBuy.Checked ? OrderType.BUY : OrderType.SELL);
 
             RefreshTrades();
             RefreshOrderHistory();
@@ -45,7 +48,7 @@ namespace MatcherPrototype
         {
             textBoxTrades.Clear();
 
-            foreach (var item in Matcher.TradeList)
+            foreach (var item in Matcher.TradeManager.MarketTrades)
             {
                 textBoxTrades.Text += item.Quantity + "@ £" + item.Price + ":£" + item.Value + " Buyer:" + item.Buyer.AccountNumber + " Seller: " + item.Seller.AccountNumber;
                 textBoxTrades.Text += Environment.NewLine;
@@ -56,10 +59,10 @@ namespace MatcherPrototype
         {
             textBoxOrderHistory.Clear();
 
-            foreach (var item in Matcher.OrderHistory)
+            foreach (var item in Matcher.OrderManager.OrderHistory)
             {
-                textBoxOrderHistory.Text += item.OrderDate.ToLongTimeString() + " => ";
-                textBoxOrderHistory.Text += item.IsBuy ? "BUY => " : "SELL => ";
+                textBoxOrderHistory.Text += item.OrderDate.Value.ToLongTimeString() + " => ";
+                textBoxOrderHistory.Text += item.OrderType == OrderType.BUY ? "BUY => " : "SELL => ";
                 textBoxOrderHistory.Text += item.Quantity + "@ £" + item.Price;
                 textBoxOrderHistory.Text += Environment.NewLine;
             }
@@ -69,10 +72,10 @@ namespace MatcherPrototype
         {
             textBoxMarketOrders.Clear();
 
-            foreach (var item in Matcher.MarketOrders)
+            foreach (var item in Matcher.OrderManager.MarketOrders)
             {
-                textBoxMarketOrders.Text += item.OrderDate.ToLongTimeString() + " => ";
-                textBoxMarketOrders.Text += item.IsBuy ? "BUY => " : "SELL => ";
+                textBoxMarketOrders.Text += item.OrderDate.Value.ToLongTimeString() + " => ";
+                textBoxMarketOrders.Text += item.OrderType == OrderType.BUY ? "BUY => " : "SELL => ";
                 textBoxMarketOrders.Text += item.Quantity + "@ £" + item.Price;
                 textBoxMarketOrders.Text += Environment.NewLine;
             }

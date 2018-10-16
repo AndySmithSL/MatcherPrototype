@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MatcherPrototype.Enumerators;
+using System;
 
 namespace MatcherPrototype.Interfaces
 {
@@ -8,32 +9,36 @@ namespace MatcherPrototype.Interfaces
         /// The account of the order
         /// </summary>
         IAccount Account { get; set; }
-       
-        /// <summary>
-        /// The price of the order
-        /// </summary>
-        decimal Price { get; set; }
 
         /// <summary>
         /// The quantity of the order
         /// </summary>
-        int Quantity { get; set; }
+        int? Quantity { get; set; }
 
         /// <summary>
-        /// Is the order a buy .....note could use an enum here.
+        /// The price of the order
         /// </summary>
-        bool IsBuy { get; set; }
+        decimal? Price { get; set; }
+
+        /// <summary>
+        /// The value of the order
+        /// </summary>
+        decimal? Value { get; }
+
+        /// <summary>
+        /// Is the order a buy or sell
+        /// </summary>
+        OrderType? OrderType { get; set; }
 
         /// <summary>
         /// The date and time of the order
         /// </summary>
-        DateTime OrderDate { get; set; }
+        DateTime? OrderDate { get; set; }
 
         /// <summary>
         /// Clone the order
         /// </summary>
-        /// <returns>Return a copy of the order.</returns>
-        IOrder Clone();
+        IOrder Clone { get; }
      
     }
 }
