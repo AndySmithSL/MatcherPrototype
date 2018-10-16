@@ -7,7 +7,7 @@ namespace MatcherPrototype.Interfaces
         /// <summary>
         /// The account of the order
         /// </summary>
-        Account Account { get; set; }
+        IAccount Account { get; set; }
        
         /// <summary>
         /// The price of the order

@@ -53,7 +53,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAccount.cs" />
     <Compile Include="Interfaces\IOrder.cs" />
+    <Compile Include="Interfaces\ITrade.cs" />
     <Compile Include="Matcher.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Program.cs" />
